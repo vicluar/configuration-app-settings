@@ -13,6 +13,7 @@ namespace configuration_app_settings.Configurations
             IConfiguration configuration)
         {
             services.Configure<AppSettings>(configuration);
+            services.Configure<MySecondLevelConfig>(configuration.GetSection("MyHeadConfiguration").GetSection("MySecondLevelConfig"));
             return services;
         }
     }
